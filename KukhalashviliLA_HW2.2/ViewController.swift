@@ -19,9 +19,11 @@ class ViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupСustomization()
+        colorSliderAction()
     }
 
     @IBAction func colorSliderAction() {
@@ -29,9 +31,7 @@ class ViewController: UIViewController {
         let greenValue = CGFloat(greenSlider.value)
         let blueValue = CGFloat(blueSlider.value)
         
-        currentRedValue.text = String(format: "%.2f", redSlider.value)
-        currentGreenValue.text = String(format: "%.2f", greenSlider.value)
-        currentBlueValue.text = String(format: "%.2f", blueSlider.value)
+        lableValue()
         
         colorView.backgroundColor = UIColor(
             red: redValue,
@@ -42,9 +42,17 @@ class ViewController: UIViewController {
     
     private func setupСustomization() {
         colorView.layer.cornerRadius = 30
+        
         redSlider.tintColor = .red
         greenSlider.tintColor = .green
         blueSlider.tintColor = .blue
     }
+    
+    private func lableValue() {
+        currentRedValue.text = String(format: "%.2f", redSlider.value)
+        currentGreenValue.text = String(format: "%.2f", greenSlider.value)
+        currentBlueValue.text = String(format: "%.2f", blueSlider.value)
+    }
+    
 }
 
