@@ -40,7 +40,7 @@ class ViewController: UIViewController {
             alpha: 1)
     }
     
-    func setupСustomization() {
+    private func setupСustomization() {
         colorView.layer.cornerRadius = 30
         redSlider.tintColor = .red
         greenSlider.tintColor = .green
